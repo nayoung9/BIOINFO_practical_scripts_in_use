@@ -1,6 +1,12 @@
 #!/usr/bin/perl
 #
 #
+# FILTER SAM from Minimap (longread - single read) 
+# recommend that input should be unsorted (query sorted): get first results when all conditions are exactly same 
+# 1st : filter unmapped results
+# 2nd : Select longer alignment 
+# 3rd : less gap + mismatch counts 
+# 
 use strict;
 use warnings;
 
