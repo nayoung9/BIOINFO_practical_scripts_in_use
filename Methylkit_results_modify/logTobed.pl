@@ -36,3 +36,7 @@ while(<F>){
 	@last_array = @ar_tmp;
 }
 close(F);
+$DMR_keep .= $last_array[2]; 
+foreach my $line (@methylC_keep){
+	print $line."\t".$DMR_keep."\n";
+}
