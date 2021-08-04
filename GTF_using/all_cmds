@@ -1,0 +1,8 @@
+awk '{if($3 == "exon"){print $_;}}' Sus_scrofa.Sscrofa11.1.100.chr.noMT.gtf  > all_exons
+awk '{if($3 == "transcript"){print $_;}}' Sus_scrofa.Sscrofa11.1.100.chr.noMT.gtf  > all_transcripts
+cut -f2,6 -d"\"" all_transcripts  | sort -u > GENE_TRANSCRIPT_MAP.txt
+
+awk '{if( $3 == "five_prime_utr"){print $_;}}' Sus_scrofa.Sscrofa11.1.100.chr.noMT.gtf > all_five_prime_utr
+awk '{if( $3 == "three_prime_utr"){print $_;}}' Sus_scrofa.Sscrofa11.1.100.chr.noMT.gtf > all_three_prime_utr
+
+perl intron_extract.pl all_exons > all_exons_introns.gtf
