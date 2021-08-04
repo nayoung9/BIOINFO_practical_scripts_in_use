@@ -49,18 +49,18 @@ for my $gene (keys %hs_exonsave){
 		$start = 0;
 		$end = 0;
 		if ($strand eq "+"){
-			$start = $ar_tmp[4];
+			$start = $ar_tmp[4]+1;
 		}else{
-			$end = $ar_tmp[3];
+			$end = $ar_tmp[3]-1;
 		}
 		my $intron_num = 1;
 		for my $number (sort { $a <=> $b } keys %{$hs_exonsave{$gene}{$transcript}}){
 			if ($number == 1){next;}
         	my @ar_tmp = split(/\t/,$hs_exonsave{$gene}{$transcript}{$number});
 			if ($strand eq "+"){
-				$end = $ar_tmp[3];
+				$end = $ar_tmp[3]-1;
 			}else{
-				$start = $ar_tmp[4];
+				$start = $ar_tmp[4]+1;
 			}
 			if ($start != 0 && $end != 0){
 				if ($intron_num == 1){
@@ -69,10 +69,10 @@ for my $gene (keys %hs_exonsave){
 					print "$ar_tmp[0]\t$ar_tmp[1]\tintron\t$start\t$end\t.\t$strand\t.\tgene_id \"$gene\"; transcript_id \"$transcript\"; intron_number \"$intron_num\";\n";
 				}
 				if ($strand eq "+"){
-					$start = $ar_tmp[4];
+					$start = $ar_tmp[4]+1;
 					$end = 0;
 				}else{
-					$end = $ar_tmp[3];
+					$end = $ar_tmp[3]-1;
 					$start = 0;
 				}
 			}
