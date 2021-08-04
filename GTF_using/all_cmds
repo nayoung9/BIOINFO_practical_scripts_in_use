@@ -6,3 +6,4 @@ awk '{if( $3 == "five_prime_utr"){print $_;}}' Sus_scrofa.Sscrofa11.1.100.chr.no
 awk '{if( $3 == "three_prime_utr"){print $_;}}' Sus_scrofa.Sscrofa11.1.100.chr.noMT.gtf > all_three_prime_utr
 
 perl intron_extract.pl all_exons > all_exons_introns.gtf
+perl promoter_extract.pl all_transcripts faSize 1> all_promoters.gtf 2> failed_promoters
