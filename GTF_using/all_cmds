@@ -7,3 +7,4 @@ awk '{if( $3 == "three_prime_utr"){print $_;}}' Sus_scrofa.Sscrofa11.1.100.chr.n
 
 perl intron_extract.pl all_exons > all_exons_introns.gtf
 perl promoter_extract.pl all_transcripts faSize 1> all_promoters.gtf 2> failed_promoters
+cat all_exons_introns.gtf all_five_prime_utr all_three_prime_utr all_transcripts all_promoters.gtf  | sort -k1n -k4n > modified_annotation.gtf
