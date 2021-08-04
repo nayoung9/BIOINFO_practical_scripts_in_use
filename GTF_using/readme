@@ -1,0 +1,4 @@
+modify gtf format gene annotation 
+- to generate intron annotation
+- to split first exon and the rest exons 
+- to generate promoter annotation
