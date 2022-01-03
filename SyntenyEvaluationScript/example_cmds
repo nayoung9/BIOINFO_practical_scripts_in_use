@@ -1,0 +1,3 @@
+perl geneCount.pl  ../../halsynteny/out.10k.psl psl ./psltest hg38 panTro5 1 &> psltest/log
+perl geneCount.pl  ../../makeBlocks/Conserved.Segments.rn sg ./sgtest hg38 panTro5 0 &> sgtest/log
+perl geneCount.pl  ../../version9/paf/1k/synteny_lv1.txt  v9 ./v9test/ hg38 panTro5 1 &> v9test/log
